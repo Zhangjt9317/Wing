@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wing/screens/home.dart';
+import 'package:wing/components/bottom_nav.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,11 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const Home());
+        // ignore: avoid_unnecessary_containers
+        home: Container(
+            child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: const <Widget>[BottomNav()],
+        )));
   }
 }
