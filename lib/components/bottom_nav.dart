@@ -1,25 +1,41 @@
 import 'package:flutter/material.dart';
 
-class BottomNav extends StatelessWidget {
+class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
 
   @override
+  State<BottomNav> createState() => _BottomNavState();
+}
+
+class _BottomNavState extends State<BottomNav> {
+  String _tab = 'Home';
+
+  @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(items: const <BottomNavigationBarItem>[
-      BottomNavigationBarItem(
-          icon: Icon(Icons.home), label: 'Home', backgroundColor: Colors.red),
-      BottomNavigationBarItem(
-          icon: Icon(Icons.business),
-          label: 'Business',
-          backgroundColor: Colors.purple),
-      BottomNavigationBarItem(
-          icon: Icon(Icons.school),
-          label: 'School',
-          backgroundColor: Colors.green),
-      BottomNavigationBarItem(
-          icon: Icon(Icons.settings),
-          label: 'Settings',
-          backgroundColor: Colors.pink),
-    ]);
+    return BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: const Icon(Icons.home),
+              label: _tab,
+              backgroundColor: Colors.blueAccent),
+          BottomNavigationBarItem(
+              icon: const Icon(Icons.business),
+              label: _tab,
+              backgroundColor: Colors.blueAccent),
+          BottomNavigationBarItem(
+              icon: const Icon(Icons.school),
+              label: _tab,
+              backgroundColor: Colors.blueAccent),
+          BottomNavigationBarItem(
+              icon: const Icon(Icons.settings),
+              label: _tab,
+              backgroundColor: Colors.blueAccent),
+        ],
+        onTap: (value) {
+          if (value == 0) _tab = 'Home';
+          if (value == 1) _tab = "Flight";
+          if (value == 2) _tab = "Favorite";
+          if (value == 3) _tab = "Profile";
+        });
   }
 }

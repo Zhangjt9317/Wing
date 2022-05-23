@@ -8,8 +8,8 @@ hexStringToColor(String hexColor) {
   return Color(int.parse(hexColor, radix: 16));
 }
 
-Color white = hexStringToColor('#FFFFFF');
-Color black = hexStringToColor('#000000');
-Color accentblue = hexStringToColor('#0A84FF');
-Color accentgray = hexStringToColor('#2E323B');
-Color darkgray = hexStringToColor('#1F2229');
+final white = hexStringToColor('#FFFFFF');
+final black = hexStringToColor('#000000');
+final accentblue = hexStringToColor('#0A84FF');
+final accentgray = hexStringToColor('#2E323B');
+final darkgray = hexStringToColor('#1F2229');
